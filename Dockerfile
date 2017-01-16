@@ -2,9 +2,15 @@ FROM fedora
 
 MAINTAINER pioh "thepioh@zoho.com"
 
-RUN dnf install --setopt=tsflags=nodocs -y wget tar perl perl-core gcc \
- && dnf update --setopt=tsflags=nodocs -y \
- && dnf clean all
+RUN dnf update --setopt=tsflags=nodocs -y
+RUN dnf install --setopt=tsflags=nodocs -y wget
+RUN dnf install --setopt=tsflags=nodocs -y tar
+RUN dnf install --setopt=tsflags=nodocs -y perl perl-core
+RUN dnf install --setopt=tsflags=nodocs -y gcc
+RUN dnf install --setopt=tsflags=nodocs -y make
+RUN dnf install --setopt=tsflags=nodocs -y pkgconfig
+RUN dnf install --setopt=tsflags=nodocs -y git
+RUN dnf install --setopt=tsflags=nodocs -y unzip
 
 RUN cd ~ \
  && wget https://www.openssl.org/source/openssl-1.1.0c.tar.gz \
@@ -21,6 +27,7 @@ RUN cd ~ \
  && cd ~ \
  && rm -rf openssl* /opt/openssl
 
+RUN dnf install --setopt=tsflags=nodocs -y findutils
 
 
 CMD ["/bin/bash"]
