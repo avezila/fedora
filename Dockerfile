@@ -2,10 +2,11 @@ FROM fedora
 
 MAINTAINER pioh "thepioh@zoho.com"
 
-RUN dnf install --setopt=tsflags=nodocs -y nginx wget tar perl perl-core gcc \
+RUN dnf install --setopt=tsflags=nodocs -y wget tar perl perl-core gcc \
  && dnf update --setopt=tsflags=nodocs -y \
- && dnf clean all \
- && cd ~ \
+ && dnf clean all
+
+RUN cd ~ \
  && wget https://www.openssl.org/source/openssl-1.1.0c.tar.gz \
  && tar xf openssl-1.1.0c.tar.gz \
  && cd openssl* \
