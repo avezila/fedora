@@ -15,7 +15,7 @@ RUN dnf install --setopt=tsflags=nodocs -y unzip
 RUN cd ~ \
  && wget https://www.openssl.org/source/openssl-1.1.0f.tar.gz \
  && tar xf openssl-1.1.0f.tar.gz \
- && cd openssl* \
+ && cd openssl-1.1.0f \
  && mkdir -p /opt \
  && ./config --prefix=/opt/openssl --openssldir=/usr/ssl \
  && make \
