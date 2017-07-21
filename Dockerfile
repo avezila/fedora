@@ -1,4 +1,4 @@
-FROM fedora
+FROM fedora:26
 
 MAINTAINER pioh "thepioh@zoho.com"
 
@@ -13,8 +13,8 @@ RUN dnf install --setopt=tsflags=nodocs -y git
 RUN dnf install --setopt=tsflags=nodocs -y unzip
 
 RUN cd ~ \
- && wget https://www.openssl.org/source/openssl-1.1.0c.tar.gz \
- && tar xf openssl-1.1.0c.tar.gz \
+ && wget https://www.openssl.org/source/openssl-1.1.0f.tar.gz \
+ && tar xf openssl-1.1.0f.tar.gz \
  && cd openssl* \
  && mkdir -p /opt \
  && ./config --prefix=/opt/openssl --openssldir=/usr/ssl \
