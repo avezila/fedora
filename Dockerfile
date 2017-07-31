@@ -7,6 +7,7 @@ RUN dnf install --setopt=tsflags=nodocs -y wget
 RUN dnf install --setopt=tsflags=nodocs -y tar
 RUN dnf install --setopt=tsflags=nodocs -y perl perl-core
 RUN dnf install --setopt=tsflags=nodocs -y gcc
+RUN dnf install --setopt=tsflags=nodocs -y gcc-c++
 RUN dnf install --setopt=tsflags=nodocs -y make
 RUN dnf install --setopt=tsflags=nodocs -y pkgconfig
 RUN dnf install --setopt=tsflags=nodocs -y git
